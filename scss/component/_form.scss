@@ -1,0 +1,362 @@
+@use "../abstracts/index" as *;
+
+form {
+    position: relative;
+    z-index: 30;
+    textarea,
+    input[type="text"],
+    input[type="password"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="date"],
+    input[type="month"],
+    input[type="time"],
+    input[type="week"],
+    input[type="number"],
+    input[type="email"],
+    input[type="url"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="color"] {
+        outline: 0;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        width: 100%;
+        padding: 11px 16px;
+        background-color: var(--White);
+        border: 1px solid var(--Line);
+        border-radius: 8px;
+        color: var(--Text-primary);
+        overflow: hidden;
+        margin-bottom: 0;
+        font-size: 16px;
+        line-height: 26px;
+        @include transition3();
+        &::placeholder {
+            color: var(--Text-secondary);
+        }
+        &:focus {
+            border-color: var(--Primary);
+        }
+    }
+    button,
+    input[type="button"],
+    input[type="reset"],
+    input[type="submit"] {
+        background-color: transparent;
+        overflow: hidden;
+        padding: 0;
+    }
+    textarea {
+        height: 112px;
+    }
+}
+
+.form-search,
+.form-newsletter {
+    position: relative;
+    .button-submit {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 18px;
+        i {
+            font-size: 24px;
+            color: var(--Text-primary);
+        }
+    }
+}
+
+.form-newsletter {
+    &.style-1 {
+        fieldset input {
+            border-radius: 40px;
+            padding: 13px 24px;
+            border: unset;
+        }
+        .button-submit {
+            height: 40px;
+            width: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--Text-primary);
+            color: var(--White);
+            border-radius: 50%;
+            font-size: 20px;
+            right: 6px;
+        }
+    }
+}
+
+.tf-check {
+    position: relative;
+    cursor: pointer;
+    outline: 0;
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--Line);
+    background-color: transparent;
+    @include transition3();
+    &:checked {
+        background-color: var(--Text-primary) !important;
+        &::before {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+    &::before {
+        font-family: $fontIcon;
+        content: "\e911";
+        position: absolute;
+        color: var(--White);
+        opacity: 0;
+        left: 0px;
+        top: 0px;
+        font-size: 10px;
+        transform: scale(0.5);
+        @include transition3;
+    }
+}
+
+.box-fieldset-item {
+    fieldset {
+        flex-shrink: 0;
+        margin-right: 6px;
+        padding: 3px;
+    }
+}
+
+.leave-comment {
+    .tf-grid-layout {
+        gap: 20px;
+    }
+    &.style-1 {
+        fieldset input,
+        textarea {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: unset;
+            color: var(--White);
+            &::placeholder {
+                color: var(--Text-muted);
+            }
+        }
+    }
+}
+
+.checkbox-item {
+    label {
+        padding-left: 24px;
+        cursor: pointer;
+        position: relative;
+        color: var(--Text-primary);
+        input {
+            position: absolute;
+            opacity: 0;
+            left: 0;
+            top: 0;
+            z-index: 1;
+            &:checked {
+                ~ .btn-checkbox {
+                    border: 1px solid var(--Text-primary);
+                    background-color: var(--Text-primary);
+                    &:after {
+                        display: block;
+                    }
+                }
+            }
+        }
+        .btn-checkbox {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 15px;
+            height: 15px;
+            background-color: transparent;
+            border-radius: 2px;
+            border: 1px solid var(--Line);
+            &:after {
+                content: "\e91a";
+                font-family: $fontIcon !important;
+                position: absolute;
+                font-size: 11px;
+                font-weight: 600;
+                top: 1px;
+                left: 1px;
+                color: var(--White);
+                display: none;
+            }
+        }
+    }
+}
+
+.form-faq {
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid var(--Line);
+    display: grid;
+    gap: 16px;
+    @include res(lg, min) {
+        max-width: 380px;
+        margin-left: auto;
+        textarea {
+            height: 120px;
+        }
+    }
+    @include res(lg) {
+        margin-top: 60px;
+    }
+    @include res(md) {
+        padding: 24px 15px;
+    }
+}
+
+.form-account {
+    padding: 40px;
+    border: 1px solid var(--Line);
+    border-radius: 16px;
+    .required,
+    .forgot {
+        color: var(--Secondary);
+    }
+    fieldset {
+        position: relative;
+        input {
+            height: 50px;
+            font-size: 14px;
+            line-height: 20px;
+        }
+    }
+    .toggle-password {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 20px;
+        right: 16px;
+    }
+    .or {
+        position: relative;
+        text-align: center;
+        margin: 24px 0;
+        span {
+            position: relative;
+            background-color: var(--White);
+            z-index: 1;
+            padding: 0 20px;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background-color: var(--Line);
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+    @include res(md) {
+        padding: 30px 15px;
+    }
+}
+
+.form-calculator {
+    gap: 12px;
+    align-items: end;
+    display: flex;
+
+    .tf-grid-layout {
+        column-gap: 11px;
+        align-items: end;
+    }
+    @include res(xl, min) {
+        .tf-btn {
+            max-width: 149px !important;
+        }
+        &.style-1 {
+            .tf-btn {
+                max-width: 237.2px !important;
+            }
+        }
+    }
+    @include res(xl) {
+        flex-direction: column;
+        .tf-grid-layout {
+            width: 100%;
+        }
+    }
+}
+
+.sib-form {
+    .entry__field {
+        input {
+            height: 52px;
+            border-radius: 40px;
+            padding: 11px 22px;
+        }
+    }
+    .entry__error {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .button-submit {
+        background-color: var(--Text-primary);
+        height: 40px;
+        width: 40px;
+        color: var(--White);
+        font-size: 20px;
+        position: absolute;
+        top: 6px;
+        right: 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+    }
+    .sib-optin {
+        display: none;
+    }
+}
+
+.form-calculate {
+    background-color: var(--White);
+    border-radius: 16px;
+    padding: 28px;
+    border: 1px solid var(--Line);
+}
+
+.form-setting-social {
+    label {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        width: 40px;
+        border: 1px solid var(--Line);
+        border-radius: 50%;
+        color: var(--Text-primary);
+        flex-shrink: 0;
+        font-size: 20px;
+    }
+    fieldset {
+        display: flex;
+        position: relative;
+        align-items: center;
+        gap: 16px;
+    }
+    .icon {
+        font-size: 28px;
+        color: var(--Text-primary);
+        position: absolute;
+        right: 16px;
+    }
+    .tf-grid-layout {
+        gap: 20px 32px;
+    }
+}

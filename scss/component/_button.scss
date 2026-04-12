@@ -1,0 +1,164 @@
+@use "../abstracts/index" as *;
+.tf-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+    height: 40px;
+    padding: 0 20px;
+    background-color: var(--Primary);
+    @include transition3();
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 700;
+    span {
+        color: var(--Text-primary);
+        @include transition3();
+        white-space: nowrap;
+        display: flex;
+    }
+    i {
+        font-size: 24px;
+    }
+    .bg-effect {
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background-color: var(--Text-primary);
+        transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+    }
+    &.btn-bg-1 {
+        background-color: var(--Text-primary);
+        span {
+            color: var(--White);
+        }
+        .bg-effect {
+            background-color: var(--Primary);
+        }
+        &:hover {
+            background-color: var(--Primary);
+            span {
+                color: var(--Text-primary) !important;
+            }
+        }
+    }
+    &.btn-bg-primary-2 {
+        .bg-effect {
+            background-color: var(--White);
+        }
+        &:hover {
+            background-color: var(--White);
+            span {
+                color: var(--Text-primary) !important;
+            }
+        }
+    }
+    &.btn-bg-white {
+        background-color: var(--White);
+        .bg-effect {
+            background-color: var(--Primary);
+        }
+        &:hover {
+            background-color: var(--Primary);
+            span {
+                color: var(--Text-primary) !important;
+            }
+        }
+    }
+    &.btn-border {
+        background-color: transparent;
+        border: 1px solid var(--Text-primary);
+    }
+    &.btn-border-2 {
+        background-color: transparent;
+        border: 1px solid var(--Line);
+        .bg-effect {
+            background-color: var(--Primary);
+        }
+        &:hover {
+            background-color: var(--Primary);
+            border-color: var(--Primary);
+            span {
+                color: var(--Text-primary) !important;
+            }
+        }
+    }
+    &.btn-px-12 {
+        padding: 0 12px;
+    }
+    &:hover {
+        transition-delay: 0.15s;
+        background-color: var(--Text-primary);
+        span {
+            color: var(--White) !important;
+        }
+        .bg-effect {
+            width: 225%;
+            height: calc(var(--button-width) * 2.25);
+        }
+        -webkit-box-shadow: 0 8px 30px 0 rgba(0, 0, 0, 0.15);
+        box-shadow: 0 8px 30px 0 rgba(0, 0, 0, 0.15);
+        -webkit-transform: translate3d(0, -2px, 0);
+        transform: translate3d(0, -2px, 0);
+    }
+    @include res(md, min) {
+        height: 50px;
+        &.btn-px-24 {
+            padding: 0 24px;
+        }
+        &.btn-px-28 {
+            padding: 0 28px;
+        }
+        &.btn-px-32 {
+            padding: 0 32px;
+        }
+    }
+    @include res(md) {
+        padding: 0 12px;
+        font-size: 14px;
+        line-height: 22px;
+    }
+}
+
+.animate-hover-btn {
+    position: relative;
+    overflow: hidden;
+    @include transition3();
+    &:after {
+        background-image: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent
+        );
+        content: "";
+        left: 150%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        transform: skew(-20deg);
+        width: 200%;
+    }
+    &:hover {
+        -webkit-box-shadow: 0 8px 30px 0 rgba(0, 0, 0, 0.15);
+        box-shadow: 0 8px 30px 0 rgba(0, 0, 0, 0.15);
+        -webkit-transform: translate3d(0, -2px, 0);
+        transform: translate3d(0, -2px, 0);
+        &:after {
+            animation: shine 0.75s cubic-bezier(0.01, 0.56, 1, 1);
+        }
+    }
+}
+
+@keyframes shine {
+    100% {
+        left: -200%;
+    }
+}

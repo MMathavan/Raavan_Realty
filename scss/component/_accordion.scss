@@ -1,0 +1,26 @@
+@use "../abstracts/index" as *;
+
+.accordion-item {
+    .accordion-title {
+        width: 100%;
+        &:not(&.collapsed) {
+            .icon {
+                transform: rotate(180deg);
+            }
+        }
+    }
+    .heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 11px;
+        .icon {
+            @include transition3();
+            font-size: 28px;
+            color: var(--Text-primary);
+        }
+    }
+    .accordion-faqs-content {
+        padding-top: 6px;
+    }
+}

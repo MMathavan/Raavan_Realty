@@ -1,0 +1,113 @@
+@use "../abstracts/index" as *;
+
+.sw-button {
+    height: 60px;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background-color: var(--Text-primary);
+    color: var(--White);
+    box-shadow: 0px 10px 25px 0px #485f771a;
+    @include transition3();
+    &.swiper-button-disabled {
+        opacity: 1;
+        background-color: var(--White);
+        color: var(--Text-primary);
+    }
+    &.style-border {
+        border: 1px solid transparent;
+        opacity: 1;
+        &.swiper-button-disabled {
+            border-color: var(--Line);
+        }
+    }
+    i {
+        font-size: 32px;
+    }
+    &.style-border-2 {
+        border: 1px solid var(--Text-secondary);
+        opacity: 1;
+        height: 48px;
+        width: 48px;
+        i {
+            font-size: 24px;
+        }
+        &.swiper-button-disabled {
+            border-color: var(--White);
+        }
+    }
+    &:hover{
+        background-color: var(--Primary);
+        color: var(--Text-primary);
+    }
+    &::after {
+        display: none;
+    }
+    @include res(md) {
+        i {
+            font-size: 24px;
+        }
+    }
+}
+
+.sw-dots {
+    .swiper-pagination-bullet {
+        height: 18px;
+        width: 18px;
+        position: relative;
+        background-color: transparent;
+        border: 1px solid transparent;
+        &::after {
+            content: "";
+            position: absolute;
+            height: 8px;
+            width: 8px;
+            background-color: rgba(255, 255, 255, 0.4);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+        }
+    }
+    .swiper-pagination-bullet-active {
+        border-color: var(--White);
+        &::after {
+            background-color: var(--White);
+        }
+    }
+    &.style-1 {
+        .swiper-pagination-bullet {
+            &::after {
+                background-color: var(--Text-secondary-2);
+            }
+        }
+        .swiper-pagination-bullet-active {
+            border-color: var(--Text-primary);
+            &::after {
+                background-color: var(--Text-primary);
+            }
+        }
+    }
+}
+
+.sw-progress-layout {
+    position: relative;
+    background: #ffffff1a;
+    border-radius: 100px;
+    overflow: hidden;
+    .swiper-pagination-progressbar-fill {
+        background-color: var(--White);
+    }
+}
+
+.sw-fraction-layout {
+    font-weight: 600;
+    color: var(--Text-secondary-2);
+    display: flex;
+    gap: 7px;
+    .current {
+        color: var(--White);
+    }
+}

@@ -1,0 +1,76 @@
+@use "../abstracts/index" as *;
+
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    font-family: $font-main;
+}
+
+.map-box,
+.mapbox-1,
+.mapbox-2,
+.mapbox-3 {
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    border-radius: 24px;
+    position: relative;
+}
+
+.office-marker {
+    height: 40px;
+    width: 40px;
+    background-color: var(--White);
+    color: var(--Text-primary);
+    border: 1px solid var(--Text-primary);
+    border-radius: 50%;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    &.active {
+        background-color: var(--Text-primary);
+        color: var(--White);
+    }
+}
+.mapboxgl-popup-content {
+    padding: 0;
+    border-radius: 16px;
+}
+.office-popup {
+    padding: 16px;
+    overflow: hidden;
+    box-shadow: 0px 10px 25px 0px #485f771a;
+}
+.mapboxgl-popup-close-button {
+    overflow: hidden;
+}
+
+.mapboxgl-popup-close-button {
+    display: none;
+}
+
+.mapboxgl-popup {
+    max-width: 452px !important;
+}
+
+.mapbox-1 {
+    border-radius: 0;
+}
+
+.mapbox-3 {
+    border-radius: 0;
+    height: 540px;
+    @include res(md){
+        height: 440px;
+    }
+}
+
+.flat-map {
+    .mapbox-3 {
+        margin-bottom: -115px;
+    }
+}

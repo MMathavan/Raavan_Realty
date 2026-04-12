@@ -1,0 +1,108 @@
+@use "../abstracts/index" as *;
+
+.testimonial-item {
+    padding: 40px 32px;
+    background-color: var(--Bg-light);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    .avatar {
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    .ratings {
+        i {
+            font-size: 24px;
+        }
+    }
+    &.style-1 {
+        background-color: var(--White);
+        padding: 50px 0;
+        border-bottom: 1px solid var(--Line);
+        border-radius: 0;
+        .img-style {
+            text-align: end;
+            border-radius: 16px;
+            overflow: hidden;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .heading {
+            display: grid;
+            gap: 12px;
+        }
+
+        @include res(lg) {
+            .row {
+                gap: 40px;
+            }
+        }
+        @include res(md) {
+            padding: 60px 0;
+            .heading {
+                margin-bottom: 16px;
+                gap: 4px;
+            }
+            .ratings {
+                margin-bottom: 16px;
+            }
+        }
+        @include res(lg, min) {
+            padding: 100px 0;
+            .tf-tes-main {
+                margin-left: 83px;
+            }
+            .desc {
+                line-height: 42px;
+                max-width: 622px;
+            }
+        }
+    }
+    &.style-2 {
+        background-color: var(--White);
+        padding: 0;
+        border-radius: 0;
+        .author {
+            .name {
+                gap: 36px;
+            }
+            .ratings {
+                position: relative;
+                &::before {
+                    position: absolute;
+                    content: "";
+                    height: 1px;
+                    width: 12px;
+                    background-color: var(--Line);
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: -25px;
+                }
+            }
+        }
+        > p {
+            font-size: 30px;
+            line-height: 40px;
+        }
+        @include res(lg) {
+            > p {
+                font-size: 25px;
+                line-height: 33px;
+            }
+        }
+        @include res(md) {
+            > p {
+                font-size: 20px;
+                line-height: 28px;
+            }
+        }
+    }
+    @include res(md) {
+        padding: 24px 15px;
+    }
+}
