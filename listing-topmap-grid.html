@@ -8,7 +8,7 @@
     <!-- Basic Page Needs -->
     <meta charset="utf-8">
     <!--[if IE ]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><![endif]-->
-    <title>Luminor - Real Estate HTML Template</title>
+    <title>Ravanan Realty</title>
 
     <meta name="description"
         content="Luminor is a website specializing in buying and renting properties, connecting buyers and tenants with trusted property owners. With an easy-to-use interface and detailed information, Propty offers a fast and convenient property search experience.">
@@ -24,7 +24,6 @@
     <!-- Theme Style -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="css/map.min.css">
     <link rel="stylesheet" type="text/css" href="css/sib-styles.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
 
@@ -37,6 +36,60 @@
     <!-- Favicon and Touch Icons  -->
     <link rel="shortcut icon" href="images/favicon.svg">
     <link rel="apple-touch-icon-precomposed" href="images/favicon.svg">
+
+    <style>
+        #wrapper .tf-btn {
+            background-color: #7a0f1b !important;
+            border-color: #7a0f1b !important;
+            color: #ffffff !important;
+        }
+
+        #wrapper .tf-btn span {
+            color: inherit !important;
+        }
+
+        #wrapper .tf-btn .bg-effect {
+            background-color: #7a0f1b !important;
+        }
+
+        #wrapper .tf-btn:hover {
+            background-color: #ffffff !important;
+            border-color: #7a0f1b !important;
+            color: #000000 !important;
+        }
+
+        #wrapper .tf-btn:hover span {
+            color: inherit !important;
+        }
+
+        #wrapper .tf-btn:hover .bg-effect {
+            background-color: #ffffff !important;
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background: #0B1F5B !important;
+        }
+
+        .progress-wrap {
+            background: #0B1F5B !important;
+        }
+
+        .progress-wrap::after {
+            color: #ffffff !important;
+        }
+
+        .progress-wrap svg.progress-circle path {
+            stroke: #ffffff !important;
+        }
+
+        #wrapper footer.footer {
+            background-color: #0B1F5B !important;
+        }
+
+        #wrapper header.header {
+            z-index: 9999;
+        }
+    </style>
 </head>
 
 <body>
@@ -109,6 +162,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="header-inner">
+
                             <a href="index.html" class="site-logo">
                                 <img class="logo_header" alt="logo" width="292" height="48" src="images/logo/logo.svg">
                             </a>
@@ -149,6 +203,7 @@
                                 </a>
                                 <div class="mobile-button d-xl-none" data-bs-toggle="offcanvas"
                                     data-bs-target="#menu-mobile" aria-controls="menu-mobile">
+
                                     <div class="burger">
                                         <span></span>
                                         <span></span>
@@ -163,1038 +218,152 @@
         </header>
         <!-- End header -->
 
-        <div class="flat-map">
-            <div class="mapbox-3 ">
-                <div id="map"></div>
+        <!-- page-title -->
+        <div class="page-title style-default">
+            <div class="thumbs">
+                <img src="images/page-title/page-title-15.jpg" width="1920" height="300" alt="">
+
             </div>
-
-            <div class="tf-container">
-                <div class="flat-tab flat-tab-form">
-                    <ul class="nav-tab-form style-1 justify-content-center" role="tablist">
-                        <li class="nav-tab-item text-title fw-6" role="presentation">
-                            <a href="#forRent" class="nav-link-item active" data-bs-toggle="tab">For Rent</a>
-                        </li>
-                        <li class="nav-tab-item text-title fw-6" role="presentation">
-                            <a href="#forSale" class="nav-link-item" data-bs-toggle="tab">For Sale</a>
-                        </li>
+            <div class="content text-center">
+                <div class="tf-container">
+                    <h2 class="title text_white mb_12">All Plots</h2>
+                    <ul class="breadcrumb justify-content-center text-button fw-4">
+                        <li><a class="" href="index.html">Home</a></li>
+                        <li>Plots</li>
                     </ul>
-                    <div class="wg-filter">
-                        <div class="widget-content-inner active">
-                            <div class="form-title">
-                                <div class="wrap-fill tf-grid-layout lg-col-4 md-col-2">
-                                    <form class="w-full">
-                                        <label for="lookingFor" class="text-button text_primary-color mb_8">Looking
-                                            For</label>
-                                        <fieldset>
-                                            <input type="text" placeholder="Search keyword" id="lookingFor">
-                                        </fieldset>
-                                    </form>
-                                    <div>
-                                        <div class="text-button text_primary-color mb_8">Location</div>
-                                        <div class="nice-select" tabindex="0">
-                                            <span class="current">All Cities</span>
-                                            <ul class="list">
-                                                <li data-value="1" class="option">All Cities</li>
-                                                <li data-value="2" class="option selected">Texas</li>
-                                                <li data-value="3" class="option">Florida </li>
-                                                <li data-value="4" class="option">New York
-                                                </li>
-                                                <li data-value="5" class="option">Illinois</li>
-                                                <li data-value="6" class="option">Washington</li>
-                                                <li data-value="7" class="option">Pennsylvania</li>
-                                                <li data-value="8" class="option">Ohio</li>
-                                                <li data-value="9" class="option">Georgia</li>
-                                                <li data-value="10" class="option">North Carolina
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="text-button text_primary-color mb_8">Bedrooms</div>
-                                        <div class="nice-select" tabindex="0">
-                                            <span class="current">Any Bedrooms</span>
-                                            <ul class="list">
-                                                <li data-value class="option selected">Any Bedrooms</li>
-                                                <li data-value="1 Bedroom" class="option">1 Bedroom</li>
-                                                <li data-value="2 Bedrooms" class="option">2 Bedrooms</li>
-                                                <li data-value="3+ Bedrooms" class="option">3+ Bedrooms</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="text-button text_primary-color mb_8">Your
-                                            Budget</div>
-                                        <div class="nice-select" tabindex="0">
-                                            <span class="current">Max. Price</span>
-                                            <ul class="list">
-                                                <li data-value class="option selected">Max. Price</li>
-                                                <li data-value="Under $500" class="option">Under $500</li>
-                                                <li data-value="Under $1,000" class="option">Under $1,000</li>
-                                                <li data-value="Under $1,500" class="option">Under $1,500</li>
-                                                <li data-value="Under $2,000" class="option">Under $2,000</li>
-                                                <li data-value="Under $2,500" class="option">Under $2,500</li>
-                                                <li data-value="$3,000" class="option">$3,000</li>
-                                                <li data-value="Above $3,000" class="option">Above $3,000</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="wrap-btn">
-                                    <div class="btn-filter show-form">
-                                        <div class="icons">
-                                            <i class="icon-Faders"></i>
-                                        </div>
-                                    </div>
-                                    <a href="#" class="tf-btn btn-px-28 btn-bg-1">
-                                        <span>Search </span>
-                                        <span class="bg-effect"></span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="wd-search-form">
-                            <div class="group-select">
-                                <div class="tf-grid-layout sm-col-2">
-                                    <div class="box-select">
-                                        <div class="text-button text_primary-color mb_8">Bathrooms</div>
-                                        <div class="nice-select" tabindex="0">
-                                            <span class="current">Any Bathrooms</span>
-                                            <ul class="list">
-                                                <li data-value="1" class="option">Any Bathrooms</li>
-                                                <li data-value="1 Bathrooms" class="option">1 Bathrooms</li>
-                                                <li data-value="2 Bathrooms" class="option selected">2 Bathrooms
-                                                </li>
-                                                <li data-value="3+ Bathrooms" class="option">3+ Bathrooms </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="box-select">
-                                        <div class="text-button text_primary-color mb_8">Garages</div>
-                                        <div class="nice-select" tabindex="0">
-                                            <span class="current">Any Garages</span>
-                                            <ul class="list">
-                                                <li data-value="1" class="option">Any Garages</li>
-                                                <li data-value="1 Garages" class="option">1 Garages</li>
-                                                <li data-value="2 Garages" class="option selected">2 Garages</li>
-                                                <li data-value="3+ Garages" class="option">3+ Garages </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tf-grid-layout sm-col-2">
-                                    <div class="box-select">
-                                        <div class="text-button text_primary-color mb_8">Min size</div>
-                                        <div class="nice-select" tabindex="0">
-                                            <span class="current">Min (SqFt)</span>
-                                            <ul class="list">
-                                                <li data-value="1" class="option">Min (SqFt)</li>
-                                                <li data-value="500 SqFt" class="option">500 SqFt</li>
-                                                <li data-value="1,000 SqFt" class="option selected">1,000 SqFt</li>
-                                                <li data-value="1,500 SqFt" class="option">1,500 SqFt</li>
-                                                <li data-value="2,000 SqFt" class="option">2,000 SqFt</li>
-                                                <li data-value="2,500 SqFt" class="option">2,500 SqFt</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="box-select">
-                                        <div class="text-button text_primary-color mb_8">Max size</div>
-                                        <div class="nice-select" tabindex="0">
-                                            <span class="current">Max (SqFt)</span>
-                                            <ul class="list">
-                                                <li data-value="1" class="option">Max (SqFt)</li>
-                                                <li data-value="500 SqFt" class="option">500 SqFt</li>
-                                                <li data-value="1,000 SqFt" class="option selected">1,000 SqFt</li>
-                                                <li data-value="1,500 SqFt" class="option">1,500 SqFt</li>
-                                                <li data-value="2,000 SqFt" class="option">2,000 SqFt</li>
-                                                <li data-value="2,500 SqFt" class="option">2,500 SqFt</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="group-checkbox">
-                                <div class=" text-title text_primary-color mb_12 fw-6">Amenities:</div>
-                                <div class="group-amenities ">
-                                    <fieldset class="checkbox-item style-1  ">
-                                        <label>
-                                            <input type="checkbox">
-                                            <span class="btn-checkbox"></span>
-                                            <span class="text-body-default">Air Condition</span>
-                                        </label>
-                                    </fieldset>
-                                    <fieldset class="checkbox-item style-1  ">
-                                        <label>
-                                            <input type="checkbox">
-                                            <span class="btn-checkbox"></span>
-                                            <span class="text-body-default">Disabled Access</span>
-                                        </label>
-                                    </fieldset>
-                                    <fieldset class="checkbox-item style-1  ">
-                                        <label>
-                                            <input type="checkbox">
-                                            <span class="btn-checkbox"></span>
-                                            <span class="text-body-default">Floor</span>
-                                        </label>
-                                    </fieldset>
-                                    <fieldset class="checkbox-item style-1  ">
-                                        <label>
-                                            <input type="checkbox">
-                                            <span class="btn-checkbox"></span>
-                                            <span class="text-body-default">Heating</span>
-                                        </label>
-                                    </fieldset>
-                                    <fieldset class="checkbox-item style-1  ">
-                                        <label>
-                                            <input type="checkbox">
-                                            <span class="btn-checkbox"></span>
-                                            <span class="text-body-default">Renovation</span>
-                                        </label>
-                                    </fieldset>
-                                    <fieldset class="checkbox-item style-1  ">
-                                        <label>
-                                            <input type="checkbox">
-                                            <span class="btn-checkbox"></span>
-                                            <span class="text-body-default">Window Type</span>
-                                        </label>
-                                    </fieldset>
-                                    <fieldset class="checkbox-item style-1  ">
-                                        <label>
-                                            <input type="checkbox">
-                                            <span class="btn-checkbox"></span>
-                                            <span class="text-body-default">Cable TV</span>
-                                        </label>
-                                    </fieldset>
-                                    <fieldset class="checkbox-item style-1  ">
-                                        <label>
-                                            <input type="checkbox">
-                                            <span class="btn-checkbox"></span>
-                                            <span class="text-body-default">Elevator</span>
-                                        </label>
-                                    </fieldset>
-                                    <fieldset class="checkbox-item style-1  ">
-                                        <label>
-                                            <input type="checkbox">
-                                            <span class="btn-checkbox"></span>
-                                            <span class="text-body-default">Furnishing</span>
-                                        </label>
-                                    </fieldset>
-                                    <fieldset class="checkbox-item style-1  ">
-                                        <label>
-                                            <input type="checkbox">
-                                            <span class="btn-checkbox"></span>
-                                            <span class="text-body-default">Intercom</span>
-                                        </label>
-                                    </fieldset>
-                                    <fieldset class="checkbox-item style-1  ">
-                                        <label>
-                                            <input type="checkbox">
-                                            <span class="btn-checkbox"></span>
-                                            <span class="text-body-default">Security</span>
-                                        </label>
-                                    </fieldset>
-                                    <fieldset class="checkbox-item style-1  ">
-                                        <label>
-                                            <input type="checkbox">
-                                            <span class="btn-checkbox"></span>
-                                            <span class="text-body-default">Search property</span>
-                                        </label>
-                                    </fieldset>
-                                    <fieldset class="checkbox-item style-1  ">
-                                        <label>
-                                            <input type="checkbox">
-                                            <span class="btn-checkbox"></span>
-                                            <span class="text-body-default">Ceiling Height</span>
-                                        </label>
-                                    </fieldset>
-                                    <fieldset class="checkbox-item style-1  ">
-                                        <label>
-                                            <input type="checkbox">
-                                            <span class="btn-checkbox"></span>
-                                            <span class="text-body-default">Fence</span>
-                                        </label>
-                                    </fieldset>
-                                    <fieldset class="checkbox-item style-1  ">
-                                        <label>
-                                            <input type="checkbox">
-                                            <span class="btn-checkbox"></span>
-                                            <span class="text-body-default">Garage</span>
-                                        </label>
-                                    </fieldset>
-                                    <fieldset class="checkbox-item style-1  ">
-                                        <label>
-                                            <input type="checkbox">
-                                            <span class="btn-checkbox"></span>
-                                            <span class="text-body-default">Parking</span>
-                                        </label>
-                                    </fieldset>
-                                    <fieldset class="checkbox-item style-1  ">
-                                        <label>
-                                            <input type="checkbox">
-                                            <span class="btn-checkbox"></span>
-                                            <span class="text-body-default">Swimming Pool</span>
-                                        </label>
-                                    </fieldset>
-                                    <fieldset class="checkbox-item style-1  ">
-                                        <label>
-                                            <input type="checkbox">
-                                            <span class="btn-checkbox"></span>
-                                            <span class="text-body-default">Construction Year</span>
-                                        </label>
-                                    </fieldset>
-                                    <fieldset class="checkbox-item style-1  ">
-                                        <label>
-                                            <input type="checkbox">
-                                            <span class="btn-checkbox"></span>
-                                            <span class="text-body-default">Fireplace</span>
-                                        </label>
-                                    </fieldset>
-                                    <fieldset class="checkbox-item style-1  ">
-                                        <label>
-                                            <input type="checkbox">
-                                            <span class="btn-checkbox"></span>
-                                            <span class="text-body-default">Garden</span>
-                                        </label>
-                                    </fieldset>
-                                    <fieldset class="checkbox-item style-1  ">
-                                        <label>
-                                            <input type="checkbox">
-                                            <span class="btn-checkbox"></span>
-                                            <span class="text-body-default">Pet Friendly</span>
-                                        </label>
-                                    </fieldset>
-                                    <fieldset class="checkbox-item style-1  ">
-                                        <label>
-                                            <input type="checkbox">
-                                            <span class="btn-checkbox"></span>
-                                            <span class="text-body-default">WiFi</span>
-                                        </label>
-                                    </fieldset>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
+        <!-- End page-title -->
         <!-- main-content -->
         <div class="main-content">
 
-            <div class="section-properties">
-                <div class="tf-spacing-1">
-                    <div class="tf-container ">
-
-                        <div class="box-title mb_40">
-                            <div>
-                                <ul class="breadcrumb style-1 text-button fw-4 mb_4">
-                                    <li><a class="" href="index.html">Home</a></li>
-                                    <li>With Top Map</li>
-                                </ul>
-                                <h4>With Top Map</h4>
-                            </div>
-                            <div class="right d-flex gap_12">
-                                <ul class="nav-tab-filter align-items-center group-layout  d-flex gap_12"
-                                    role="tablist">
-                                    <li class="nav-tab-item" role="presentation">
-                                        <a href="#gridLayout" class=" btn-layout grid nav-link-item active"
-                                            data-bs-toggle="tab">
-                                            <i class="icon-SquaresFour"></i>
-                                        </a>
-                                    </li>
-                                    <li class="nav-tab-item" role="presentation">
-                                        <a href="#listLayout" class="nav-link-item btn-layout list"
-                                            data-bs-toggle="tab">
-                                            <i class="icon-Rows"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                                <div class="nice-select select-filter list-sort" tabindex="0"><span class="current">Sort
-                                        by
-                                        (Default)</span>
-                                    <ul class="list">
-                                        <li data-value="default" class="option selected">Sort by (Default)</li>
-                                        <li data-value="new" class="option">Newest</li>
-                                        <li data-value="old" class="option">Oldest</li>
-                                    </ul>
+            <div class="tf-spacing-1">
+                <div class="tf-container">
+                    <div class="tf-grid-layout lg-col-3 md-col-2">
+                        <div class="card-house style-default hover-image">
+                            <div class="img-style mb_20">
+                                <img loading="lazy" decoding="async" src="images/home/home-1.jpg"
+                                    srcset="images/home/home-1.jpg 410w" sizes="(max-width: 410px) 100vw, 410px"
+                                    width="410" height="308" alt="home">
+                                <div class="wrap-tag d-flex gap_8 mb_12">
+                                    <div class="tag rent text-button-small fw-6 text_primary-color">
+                                        For Sale
+                                    </div>
+                                    <div class="tag categoreis text-button-small fw-6 text_primary-color">
+                                        Plot
+                                    </div>
                                 </div>
+                                <a href="subbammal-nagar-plots-perungattur.html" class="overlay-link"></a>
+                                <div class="wishlist">
+                                    <a href="javascript:void(0);" class="hover-tooltip tooltip-left box-icon">
+                                        <span class="icon icon-Heart"></span>
+                                        <span class="tooltip">Add to Wishlist</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <h4 class="price mb_12">₹ 700 - 900 <span
+                                        class="text_secondary-color text-body-default">/sq.ft.</span></h4>
+                                <a href="subbammal-nagar-plots-perungattur.html"
+                                    class="title mb_8 h5 link text_primary-color">Subbammal Nagar,
+                                    Perungattur</a>
+                                <p>Arcot - Kanchipuram Rd, Tamil Nadu - 604402</p>
+                                <ul class="info d-flex">
+                                    <li class="d-flex align-items-center gap_8 text-title text_primary-color fw-6">
+                                        <i class="icon-Bed"></i>4 Beds
+                                    </li>
+                                    <li class="d-flex align-items-center gap_8 text-title text_primary-color fw-6">
+                                        <i class="icon-Bathstub"></i>2 Baths
+                                    </li>
+                                    <li class="d-flex align-items-center gap_8 text-title text_primary-color fw-6">
+                                        <i class="icon-Ruler"></i>2,400 sqft
+                                    </li>
+                                </ul>
                             </div>
                         </div>
 
-                        <div class="flat-animate-tab">
-                            <div class="tab-content">
-                                <div class="tab-pane active show" id="gridLayout" role="tabpanel">
-                                    <div class="tf-grid-layout lg-col-3 md-col-2">
-                                        <div class="card-house style-default hover-image" data-id="2">
-                                            <div class="img-style mb_20">
-                                                <img loading="lazy" decoding="async" src="images/home/home-1.jpg"
-                                                    srcset="images/home/home-1.jpg 410w"
-                                                    sizes="(max-width: 410px) 100vw, 410px" width="410" height="308"
-                                                    alt="home">
-                                                <div class="wrap-tag d-flex gap_8 mb_12">
-                                                    <div class="tag rent text-button-small fw-6 text_primary-color">
-                                                        For Rent
-                                                    </div>
-                                                    <div
-                                                        class="tag categoreis text-button-small fw-6 text_primary-color">
-                                                        Apartment
-                                                    </div>
-                                                </div>
-                                                <a href="property-details-1.html" class="overlay-link"></a>
-                                                <div class="wishlist">
-                                                    <a href="javascript:void(0);"
-                                                        class="hover-tooltip tooltip-left box-icon">
-                                                        <span class="icon icon-Heart"></span>
-                                                        <span class="tooltip">Add to Wishlist</span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="content">
-                                                <h4 class="price mb_12">$250,00<span
-                                                        class="text_secondary-color text-body-default">/month</span>
-                                                </h4>
-                                                <a href="property-details-1.html"
-                                                    class="title mb_8 h5 link text_primary-color">Villa
-                                                    Del Mar Retreat,
-                                                    Malibu</a>
-                                                <p>72 Sunset Avenue, Los Angeles, California</p>
-                                                <ul class="info d-flex">
-                                                    <li
-                                                        class="d-flex align-items-center gap_8 text-title text_primary-color fw-6">
-                                                        <i class="icon-Bed"></i>4 Beds
-                                                    </li>
-                                                    <li
-                                                        class="d-flex align-items-center gap_8 text-title text_primary-color fw-6">
-                                                        <i class="icon-Bathstub"></i>2 Baths
-                                                    </li>
-                                                    <li
-                                                        class="d-flex align-items-center gap_8 text-title text_primary-color fw-6">
-                                                        <i class="icon-Ruler"></i>2,400 Sqft
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-
-                                        <div class="card-house style-default hover-image" data-id="3">
-                                            <div class="img-style mb_20">
-                                                <img loading="lazy" decoding="async" src="images/home/home-2.jpg"
-                                                    srcset="images/home/home-2.jpg 410w"
-                                                    sizes="(max-width: 410px) 100vw, 410px" width="410" height="308"
-                                                    alt="home">
-                                                <div class="wrap-tag d-flex gap_8 mb_12">
-                                                    <div class="tag sale text-button-small fw-6 text_primary-color">
-                                                        For Sale
-                                                    </div>
-                                                    <div
-                                                        class="tag categoreis text-button-small fw-6 text_primary-color">
-                                                        Villa
-                                                    </div>
-                                                </div>
-                                                <a href="property-details-1.html" class="overlay-link"></a>
-                                                <div class="wishlist">
-                                                    <a href="javascript:void(0);"
-                                                        class="hover-tooltip tooltip-left box-icon">
-                                                        <span class="icon icon-Heart"></span>
-                                                        <span class="tooltip">Add to Wishlist</span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="content">
-                                                <h4 class="price mb_12">$6130,00<span
-                                                        class="text_secondary-color text-body-default">/SqFT</span></h4>
-                                                <a href="property-details-1.html"
-                                                    class="title mb_8 h5 link text_primary-color">Sunset
-                                                    Heights Estate</a>
-                                                <p>245 Elm Street, San Francisco, CA 94102</p>
-                                                <ul class="info d-flex">
-                                                    <li
-                                                        class="d-flex align-items-center gap_8 text-title text_primary-color fw-6">
-                                                        <i class="icon-Bed"></i>3 Beds
-                                                    </li>
-                                                    <li
-                                                        class="d-flex align-items-center gap_8 text-title text_primary-color fw-6">
-                                                        <i class="icon-Bathstub"></i>2 Baths
-                                                    </li>
-                                                    <li
-                                                        class="d-flex align-items-center gap_8 text-title text_primary-color fw-6">
-                                                        <i class="icon-Ruler"></i>1,600 Sqft
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-
-                                        <div class="card-house style-default hover-image" data-id="4">
-                                            <div class="img-style mb_20">
-                                                <img loading="lazy" decoding="async" src="images/home/home-3.jpg"
-                                                    srcset="images/home/home-3.jpg 410w"
-                                                    sizes="(max-width: 410px) 100vw, 410px" width="410" height="308"
-                                                    alt="home">
-                                                <div class="wrap-tag d-flex gap_8 mb_12">
-                                                    <div class="tag rent text-button-small fw-6 text_primary-color">
-                                                        For Rent
-                                                    </div>
-                                                    <div
-                                                        class="tag categoreis text-button-small fw-6 text_primary-color">
-                                                        Studio
-                                                    </div>
-                                                </div>
-                                                <a href="property-details-1.html" class="overlay-link"></a>
-                                                <div class="wishlist">
-                                                    <a href="javascript:void(0);"
-                                                        class="hover-tooltip tooltip-left box-icon">
-                                                        <span class="icon icon-Heart"></span>
-                                                        <span class="tooltip">Add to Wishlist</span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="content">
-                                                <h4 class="price mb_12">$5280,00<span
-                                                        class="text_secondary-color text-body-default">/month</span>
-                                                </h4>
-                                                <a href="property-details-1.html"
-                                                    class="title mb_8 h5 link text_primary-color">Coastal
-                                                    Serenity Cottage</a>
-                                                <p>918 Maple Avenue, Brooklyn, NY 11215</p>
-                                                <ul class="info d-flex">
-                                                    <li
-                                                        class="d-flex align-items-center gap_8 text-title text_primary-color fw-6">
-                                                        <i class="icon-Bed"></i>4 Beds
-                                                    </li>
-                                                    <li
-                                                        class="d-flex align-items-center gap_8 text-title text_primary-color fw-6">
-                                                        <i class="icon-Bathstub"></i>2 Baths
-                                                    </li>
-                                                    <li
-                                                        class="d-flex align-items-center gap_8 text-title text_primary-color fw-6">
-                                                        <i class="icon-Ruler"></i>2,600 Sqft
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-
-                                        <div class="card-house style-default hover-image" data-id="5">
-                                            <div class="img-style mb_20">
-                                                <img loading="lazy" decoding="async" src="images/home/home-4.jpg"
-                                                    srcset="images/home/home-4.jpg 410w"
-                                                    sizes="(max-width: 410px) 100vw, 410px" width="410" height="308"
-                                                    alt="home">
-                                                <div class="wrap-tag d-flex gap_8 mb_12">
-                                                    <div class="tag sale text-button-small fw-6 text_primary-color">
-                                                        For Sale
-                                                    </div>
-                                                    <div
-                                                        class="tag categoreis text-button-small fw-6 text_primary-color">
-                                                        Villa
-                                                    </div>
-                                                </div>
-                                                <a href="property-details-1.html" class="overlay-link"></a>
-                                                <div class="wishlist">
-                                                    <a href="javascript:void(0);"
-                                                        class="hover-tooltip tooltip-left box-icon">
-                                                        <span class="icon icon-Heart"></span>
-                                                        <span class="tooltip">Add to Wishlist</span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="content">
-                                                <h4 class="price mb_12">$6640,00<span
-                                                        class="text_secondary-color text-body-default">/SqFT</span></h4>
-                                                <a href="property-details-1.html"
-                                                    class="title mb_8 h5 link text_primary-color">Rancho
-                                                    Vista Verde</a>
-                                                <p>77 Lakeview Court, Orlando, FL 32801</p>
-                                                <ul class="info d-flex">
-                                                    <li
-                                                        class="d-flex align-items-center gap_8 text-title text_primary-color fw-6">
-                                                        <i class="icon-Bed"></i>4 Beds
-                                                    </li>
-                                                    <li
-                                                        class="d-flex align-items-center gap_8 text-title text_primary-color fw-6">
-                                                        <i class="icon-Bathstub"></i>2 Baths
-                                                    </li>
-                                                    <li
-                                                        class="d-flex align-items-center gap_8 text-title text_primary-color fw-6">
-                                                        <i class="icon-Ruler"></i>2,400 Sqft
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-
-                                        <div class="card-house style-default hover-image" data-id="6">
-                                            <div class="img-style mb_20">
-                                                <img loading="lazy" decoding="async" src="images/home/home-5.jpg"
-                                                    srcset="images/home/home-5.jpg 410w"
-                                                    sizes="(max-width: 410px) 100vw, 410px" width="410" height="308"
-                                                    alt="home">
-                                                <div class="wrap-tag d-flex gap_8 mb_12">
-                                                    <div class="tag rent text-button-small fw-6 text_primary-color">
-                                                        For Rent
-                                                    </div>
-                                                    <div
-                                                        class="tag categoreis text-button-small fw-6 text_primary-color">
-                                                        Office
-                                                    </div>
-                                                </div>
-                                                <a href="property-details-1.html" class="overlay-link"></a>
-                                                <div class="wishlist">
-                                                    <a href="javascript:void(0);"
-                                                        class="hover-tooltip tooltip-left box-icon">
-                                                        <span class="icon icon-Heart"></span>
-                                                        <span class="tooltip">Add to Wishlist</span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="content">
-                                                <h4 class="price mb_12">$320,00<span
-                                                        class="text_secondary-color text-body-default">/month</span>
-                                                </h4>
-                                                <a href="property-details-1.html"
-                                                    class="title mb_8 h5 link text_primary-color">Villa
-                                                    del Mar Retreat</a>
-                                                <p>1325 Oakwood Drive, Austin, TX 78703</p>
-                                                <ul class="info d-flex">
-                                                    <li
-                                                        class="d-flex align-items-center gap_8 text-title text_primary-color fw-6">
-                                                        <i class="icon-Bed"></i>4 Beds
-                                                    </li>
-                                                    <li
-                                                        class="d-flex align-items-center gap_8 text-title text_primary-color fw-6">
-                                                        <i class="icon-Bathstub"></i>2 Baths
-                                                    </li>
-                                                    <li
-                                                        class="d-flex align-items-center gap_8 text-title text_primary-color fw-6">
-                                                        <i class="icon-Ruler"></i>1,800 Sqft
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-
-                                        <div class="card-house style-default hover-image" data-id="7">
-                                            <div class="img-style mb_20">
-                                                <img loading="lazy" decoding="async" src="images/home/home-6.jpg"
-                                                    srcset="images/home/home-6.jpg 410w"
-                                                    sizes="(max-width: 410px) 100vw, 410px" width="410" height="308"
-                                                    alt="home">
-                                                <div class="wrap-tag d-flex gap_8 mb_12">
-                                                    <div class="tag sale text-button-small fw-6 text_primary-color">
-                                                        For Sale
-                                                    </div>
-                                                    <div
-                                                        class="tag categoreis text-button-small fw-6 text_primary-color">
-                                                        Townhouse
-                                                    </div>
-                                                </div>
-                                                <a href="property-details-1.html" class="overlay-link"></a>
-                                                <div class="wishlist">
-                                                    <a href="javascript:void(0);"
-                                                        class="hover-tooltip tooltip-left box-icon">
-                                                        <span class="icon icon-Heart"></span>
-                                                        <span class="tooltip">Add to Wishlist</span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="content">
-                                                <h4 class="price mb_12">$5210,00<span
-                                                        class="text_secondary-color text-body-default">/SqFT</span></h4>
-                                                <a href="property-details-1.html"
-                                                    class="title mb_8 h5 link text_primary-color">Casa
-                                                    Lomas De Machali</a>
-                                                <p>4600 Sunset Blvd, Los Angeles, CA 90027</p>
-                                                <ul class="info d-flex">
-                                                    <li
-                                                        class="d-flex align-items-center gap_8 text-title text_primary-color fw-6">
-                                                        <i class="icon-Bed"></i>4 Beds
-                                                    </li>
-                                                    <li
-                                                        class="d-flex align-items-center gap_8 text-title text_primary-color fw-6">
-                                                        <i class="icon-Bathstub"></i>2 Baths
-                                                    </li>
-                                                    <li
-                                                        class="d-flex align-items-center gap_8 text-title text_primary-color fw-6">
-                                                        <i class="icon-Ruler"></i>2,200 Sqft
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-
-                                        <div class="card-house style-default hover-image" data-id="1">
-                                            <div class="img-style mb_20">
-                                                <img loading="lazy" decoding="async" src="images/home/home-9.jpg"
-                                                    srcset="images/home/home-9.jpg 410w"
-                                                    sizes="(max-width: 410px) 100vw, 410px" width="410" height="308"
-                                                    alt="home">
-                                                <div class="wrap-tag d-flex gap_8 mb_12">
-                                                    <div class="tag rent text-button-small fw-6 text_primary-color">
-                                                        For Rent
-                                                    </div>
-                                                    <div
-                                                        class="tag categoreis text-button-small fw-6 text_primary-color">
-                                                        Apartment
-                                                    </div>
-                                                </div>
-                                                <a href="property-details-1.html" class="overlay-link"></a>
-                                                <div class="wishlist">
-                                                    <a href="javascript:void(0);"
-                                                        class="hover-tooltip tooltip-left box-icon">
-                                                        <span class="icon icon-Heart"></span>
-                                                        <span class="tooltip">Add to Wishlist</span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="content">
-                                                <h4 class="price mb_12">$450,00<span
-                                                        class="text_secondary-color text-body-default">/month</span>
-                                                </h4>
-                                                <a href="property-details-1.html"
-                                                    class="title mb_8 h5 link text_primary-color">Palmcrest
-                                                    Residences</a>
-                                                <p>1422 Sunset Avenue, Los Angeles, CA 90026</p>
-                                                <ul class="info d-flex">
-                                                    <li
-                                                        class="d-flex align-items-center gap_8 text-title text_primary-color fw-6">
-                                                        <i class="icon-Bed"></i>3 Beds
-                                                    </li>
-                                                    <li
-                                                        class="d-flex align-items-center gap_8 text-title text_primary-color fw-6">
-                                                        <i class="icon-Bathstub"></i>3 Baths
-                                                    </li>
-                                                    <li
-                                                        class="d-flex align-items-center gap_8 text-title text_primary-color fw-6">
-                                                        <i class="icon-Ruler"></i>1,200 Sqft
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-
-                                        <div class="card-house style-default hover-image" data-id="8">
-                                            <div class="img-style mb_20">
-                                                <img loading="lazy" decoding="async" src="images/home/home-10.jpg"
-                                                    srcset="images/home/home-10.jpg 410w"
-                                                    sizes="(max-width: 410px) 100vw, 410px" width="410" height="308"
-                                                    alt="home">
-                                                <div class="wrap-tag d-flex gap_8 mb_12">
-                                                    <div class="tag rent text-button-small fw-6 text_primary-color">
-                                                        For Rent
-                                                    </div>
-                                                    <div
-                                                        class="tag categoreis text-button-small fw-6 text_primary-color">
-                                                        Villa
-                                                    </div>
-                                                </div>
-                                                <a href="property-details-1.html" class="overlay-link"></a>
-                                                <div class="wishlist">
-                                                    <a href="javascript:void(0);"
-                                                        class="hover-tooltip tooltip-left box-icon">
-                                                        <span class="icon icon-Heart"></span>
-                                                        <span class="tooltip">Add to Wishlist</span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="content">
-                                                <h4 class="price mb_12">$320,00<span
-                                                        class="text_secondary-color text-body-default">/month</span>
-                                                </h4>
-                                                <a href="property-details-1.html"
-                                                    class="title mb_8 h5 link text_primary-color">Cedar
-                                                    Hill Estates</a>
-                                                <p>3809 Whispering Pines Road, Austin, TX 73301</p>
-                                                <ul class="info d-flex">
-                                                    <li
-                                                        class="d-flex align-items-center gap_8 text-title text_primary-color fw-6">
-                                                        <i class="icon-Bed"></i>2 Beds
-                                                    </li>
-                                                    <li
-                                                        class="d-flex align-items-center gap_8 text-title text_primary-color fw-6">
-                                                        <i class="icon-Bathstub"></i>2 Baths
-                                                    </li>
-                                                    <li
-                                                        class="d-flex align-items-center gap_8 text-title text_primary-color fw-6">
-                                                        <i class="icon-Ruler"></i>3,800 Sqft
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-
-                                        <div class="card-house style-default hover-image" data-id="9">
-                                            <div class="img-style mb_20">
-                                                <img loading="lazy" decoding="async" src="images/home/home-8.jpg"
-                                                    srcset="images/home/home-8.jpg 410w"
-                                                    sizes="(max-width: 410px) 100vw, 410px" width="410" height="308"
-                                                    alt="home">
-                                                <div class="wrap-tag d-flex gap_8 mb_12">
-                                                    <div class="tag sale text-button-small fw-6 text_primary-color">
-                                                        For Sale
-                                                    </div>
-                                                    <div
-                                                        class="tag categoreis text-button-small fw-6 text_primary-color">
-                                                        House
-                                                    </div>
-                                                </div>
-                                                <a href="property-details-1.html" class="overlay-link"></a>
-                                                <div class="wishlist">
-                                                    <a href="javascript:void(0);"
-                                                        class="hover-tooltip tooltip-left box-icon">
-                                                        <span class="icon icon-Heart"></span>
-                                                        <span class="tooltip">Add to Wishlist</span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="content">
-                                                <h4 class="price mb_12">$5210,00<span
-                                                        class="text_secondary-color text-body-default">/SqFT</span></h4>
-                                                <a href="property-details-1.html"
-                                                    class="title mb_8 h5 link text_primary-color">Oceanview Heights</a>
-                                                <p>91 Coastal Breeze Drive, San Diego, CA 92101</p>
-                                                <ul class="info d-flex">
-                                                    <li
-                                                        class="d-flex align-items-center gap_8 text-title text_primary-color fw-6">
-                                                        <i class="icon-Bed"></i>4 Beds
-                                                    </li>
-                                                    <li
-                                                        class="d-flex align-items-center gap_8 text-title text_primary-color fw-6">
-                                                        <i class="icon-Bathstub"></i>2 Baths
-                                                    </li>
-                                                    <li
-                                                        class="d-flex align-items-center gap_8 text-title text_primary-color fw-6">
-                                                        <i class="icon-Ruler"></i>2,200 Sqft
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
+                        <div class="card-house style-default hover-image">
+                            <div class="img-style mb_20">
+                                <img loading="lazy" decoding="async" src="images/home/home-2.jpg"
+                                    srcset="images/home/home-2.jpg 410w" sizes="(max-width: 410px) 100vw, 410px"
+                                    width="410" height="308" alt="home">
+                                <div class="wrap-tag d-flex gap_8 mb_12">
+                                    <div class="tag rent text-button-small fw-6 text_primary-color">
+                                        For Sale
+                                    </div>
+                                    <div class="tag categoreis text-button-small fw-6 text_primary-color">
+                                        Villa
                                     </div>
                                 </div>
-                                <div class="tab-pane" id="listLayout" role="tabpanel">
-                                    <div class="wrap-list d-grid gap_30">
-                                        <div class="card-house style-list v2" data-id="1">
-                                            <div class="wrap-img">
-                                                <a href="property-details-1.html" class="img-style">
-                                                    <img loading="lazy" decoding="async"
-                                                        src="images/home/home-list-4.jpg"
-                                                        srcset="images/home/home-list-4.jpg 392w"
-                                                        sizes="(max-width: 392px) 100vw, 392px" width="392" height="260"
-                                                        alt="home">
-                                                </a>
-                                                <a href="property-details-1.html" class="img-style">
-                                                    <img loading="lazy" decoding="async"
-                                                        src="images/home/home-list-4.1.jpg"
-                                                        srcset="images/home/home-list-4.1.jpg 392w"
-                                                        sizes="(max-width: 392px) 100vw, 392px" width="392" height="260"
-                                                        alt="home">
-                                                </a>
-                                            </div>
-                                            <div class="content">
-                                                <div
-                                                    class="d-flex align-items-center gap_6 top mb_16 flex-wrap justify-content-between">
-                                                    <h4 class="price ">$580,00<span
-                                                            class="text_secondary-color text-body-default">/month</span>
-                                                    </h4>
-                                                    <div class="wrap-tag d-flex gap_8">
-                                                        <div class="tag rent text-button-small fw-6 text_primary-color">
-                                                            For Rent
-                                                        </div>
-                                                        <div
-                                                            class="tag categoreis text-button-small fw-6 text_primary-color">
-                                                            House
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <a href="property-details-1.html"
-                                                    class="title mb_8 h5 link text_primary-color">Casa Lomas de
-                                                    Machali</a>
-                                                <p>4600 Sunset Blvd, Los Angeles, CA 90027</p>
-                                                <ul class="info d-flex">
-                                                    <li
-                                                        class="d-flex align-items-center gap_8 text-title text_primary-color fw-6">
-                                                        <i class="icon-Bed"></i>2 Beds
-                                                    </li>
-                                                    <li
-                                                        class="d-flex align-items-center gap_8 text-title text_primary-color fw-6">
-                                                        <i class="icon-Bathstub"></i>2 Baths
-                                                    </li>
-                                                    <li
-                                                        class="d-flex align-items-center gap_8 text-title text_primary-color fw-6">
-                                                        <i class="icon-Ruler"></i>1,800 Sqft
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="card-house style-list v2" data-id="2">
-                                            <div class="wrap-img">
-                                                <a href="property-details-1.html" class="img-style">
-                                                    <img loading="lazy" decoding="async"
-                                                        src="images/home/home-list-5.jpg"
-                                                        srcset="images/home/home-list-5.jpg 392w"
-                                                        sizes="(max-width: 392px) 100vw, 392px" width="392" height="260"
-                                                        alt="home">
-                                                </a>
-                                                <a href="property-details-1.html" class="img-style">
-                                                    <img loading="lazy" decoding="async"
-                                                        src="images/home/home-list-5.1.jpg"
-                                                        srcset="images/home/home-list-5.1.jpg 392w"
-                                                        sizes="(max-width: 392px) 100vw, 392px" width="392" height="260"
-                                                        alt="home">
-                                                </a>
-                                            </div>
-                                            <div class="content">
-                                                <div
-                                                    class="d-flex align-items-center gap_6 top mb_16 flex-wrap justify-content-between">
-                                                    <h4 class="price ">$5210,00<span
-                                                            class="text_secondary-color text-body-default">/SqFT</span>
-                                                    </h4>
-                                                    <div class="wrap-tag d-flex gap_8">
-                                                        <div class="tag sale text-button-small fw-6 text_primary-color">
-                                                            For Sale
-                                                        </div>
-                                                        <div
-                                                            class="tag categoreis text-button-small fw-6 text_primary-color">
-                                                            Office
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <a href="property-details-1.html"
-                                                    class="title mb_8 h5 link text_primary-color">The Grand Oak
-                                                    Retreat</a>
-                                                <p>9301 Forest Hill Dr, Austin, TX 78759</p>
-                                                <ul class="info d-flex">
-                                                    <li
-                                                        class="d-flex align-items-center gap_8 text-title text_primary-color fw-6">
-                                                        <i class="icon-Bed"></i>3 Beds
-                                                    </li>
-                                                    <li
-                                                        class="d-flex align-items-center gap_8 text-title text_primary-color fw-6">
-                                                        <i class="icon-Bathstub"></i>2 Baths
-                                                    </li>
-                                                    <li
-                                                        class="d-flex align-items-center gap_8 text-title text_primary-color fw-6">
-                                                        <i class="icon-Ruler"></i>3,200 Sqft
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="card-house style-list v2" data-id="3">
-                                            <div class="wrap-img">
-                                                <a href="property-details-1.html" class="img-style">
-                                                    <img loading="lazy" decoding="async"
-                                                        src="images/home/home-list-6.jpg"
-                                                        srcset="images/home/home-list-6.jpg 392w"
-                                                        sizes="(max-width: 392px) 100vw, 392px" width="392" height="260"
-                                                        alt="home">
-                                                </a>
-                                                <a href="property-details-1.html" class="img-style">
-                                                    <img loading="lazy" decoding="async"
-                                                        src="images/home/home-list-6.1.jpg"
-                                                        srcset="images/home/home-list-6.1.jpg 392w"
-                                                        sizes="(max-width: 392px) 100vw, 392px" width="392" height="260"
-                                                        alt="home">
-                                                </a>
-                                            </div>
-                                            <div class="content">
-                                                <div
-                                                    class="d-flex align-items-center gap_6 top mb_16 flex-wrap justify-content-between">
-                                                    <h4 class="price ">$320,00<span
-                                                            class="text_secondary-color text-body-default">/month</span>
-                                                    </h4>
-                                                    <div class="wrap-tag d-flex gap_8">
-                                                        <div class="tag rent text-button-small fw-6 text_primary-color">
-                                                            For Rent
-                                                        </div>
-                                                        <div
-                                                            class="tag categoreis text-button-small fw-6 text_primary-color">
-                                                            Office
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <a href="property-details-1.html"
-                                                    class="title mb_8 h5 link text_primary-color">Sierra Ridge
-                                                    Cottage</a>
-                                                <p>1745 Mountain View Rd, Lake Tahoe, CA 96150</p>
-                                                <ul class="info d-flex">
-                                                    <li
-                                                        class="d-flex align-items-center gap_8 text-title text_primary-color fw-6">
-                                                        <i class="icon-Bed"></i>2 Beds
-                                                    </li>
-                                                    <li
-                                                        class="d-flex align-items-center gap_8 text-title text_primary-color fw-6">
-                                                        <i class="icon-Bathstub"></i>3 Baths
-                                                    </li>
-                                                    <li
-                                                        class="d-flex align-items-center gap_8 text-title text_primary-color fw-6">
-                                                        <i class="icon-Ruler"></i>1,500 Sqft
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="card-house style-list v2" data-id="4">
-                                            <div class="wrap-img">
-                                                <a href="property-details-1.html" class="img-style">
-                                                    <img loading="lazy" decoding="async"
-                                                        src="images/home/home-list-7.jpg"
-                                                        srcset="images/home/home-list-7.jpg 392w"
-                                                        sizes="(max-width: 392px) 100vw, 392px" width="392" height="260"
-                                                        alt="home">
-                                                </a>
-                                                <a href="property-details-1.html" class="img-style">
-                                                    <img loading="lazy" decoding="async"
-                                                        src="images/home/home-list-7.1.jpg"
-                                                        srcset="images/home/home-list-7.1.jpg 392w"
-                                                        sizes="(max-width: 392px) 100vw, 392px" width="392" height="260"
-                                                        alt="home">
-                                                </a>
-                                            </div>
-                                            <div class="content">
-                                                <div
-                                                    class="d-flex align-items-center gap_6 top mb_16 flex-wrap justify-content-between">
-                                                    <h4 class="price ">$5210,00<span
-                                                            class="text_secondary-color text-body-default">/SqFT</span>
-                                                    </h4>
-                                                    <div class="wrap-tag d-flex gap_8">
-                                                        <div class="tag sale text-button-small fw-6 text_primary-color">
-                                                            For Sale
-                                                        </div>
-                                                        <div
-                                                            class="tag categoreis text-button-small fw-6 text_primary-color">
-                                                            Villa
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <a href="property-details-1.html"
-                                                    class="title mb_8 h5 link text_primary-color">Palmcrest
-                                                    Residences</a>
-                                                <p>1422 Sunset Avenue, Los Angeles, CA 90026</p>
-                                                <ul class="info d-flex">
-                                                    <li
-                                                        class="d-flex align-items-center gap_8 text-title text_primary-color fw-6">
-                                                        <i class="icon-Bed"></i>2 Beds
-                                                    </li>
-                                                    <li
-                                                        class="d-flex align-items-center gap_8 text-title text_primary-color fw-6">
-                                                        <i class="icon-Bathstub"></i>3 Baths
-                                                    </li>
-                                                    <li
-                                                        class="d-flex align-items-center gap_8 text-title text_primary-color fw-6">
-                                                        <i class="icon-Ruler"></i>1,500 Sqft
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <a href="sunset-heights-estate.html" class="overlay-link"></a>
+                                <div class="wishlist">
+                                    <a href="javascript:void(0);" class="hover-tooltip tooltip-left box-icon">
+                                        <span class="icon icon-Heart"></span>
+                                        <span class="tooltip">Add to Wishlist</span>
+                                    </a>
                                 </div>
+                            </div>
+                            <div class="content">
+                                <h4 class="price mb_12">$6130,00<span
+                                        class="text_secondary-color text-body-default">/SqFT</span></h4>
+                                <a href="sunset-heights-estate.html" class="title mb_8 h5 link text_primary-color">Sunset
+                                    Heights Estate</a>
+                                <p>245 Elm Street, San Francisco, CA 94102</p>
+                                <ul class="info d-flex">
+                                    <li class="d-flex align-items-center gap_8 text-title text_primary-color fw-6">
+                                        <i class="icon-Bed"></i>3 Beds
+                                    </li>
+                                    <li class="d-flex align-items-center gap_8 text-title text_primary-color fw-6">
+                                        <i class="icon-Bathstub"></i>2 Baths
+                                    </li>
+                                    <li class="d-flex align-items-center gap_8 text-title text_primary-color fw-6">
+                                        <i class="icon-Ruler"></i>1,600 Sqft
+                                    </li>
+                                </ul>
                             </div>
                         </div>
 
-                        <ul class="wg-pagination justify-content-center ">
-                            <li>
-                                <a href="#">1</a>
-                            </li>
-                            <li class="active">
-                                <a href="#">2</a>
-                            </li>
-                            <li>
-                                <a href="#">3</a>
-                            </li>
-                            <li class="arrow">
-                                <a href="#"><i class="icon-CaretRight"></i></a>
-                            </li>
-                        </ul>
+                        <div class="card-house style-default hover-image">
+                            <div class="img-style mb_20">
+                                <img loading="lazy" decoding="async" src="images/home/home-3.jpg"
+                                    srcset="images/home/home-3.jpg 410w" sizes="(max-width: 410px) 100vw, 410px"
+                                    width="410" height="308" alt="home">
+                                <div class="wrap-tag d-flex gap_8 mb_12">
+                                    <div class="tag rent text-button-small fw-6 text_primary-color">
+                                        For Rent
+                                    </div>
+                                    <div class="tag categoreis text-button-small fw-6 text_primary-color">
+                                        Studio
+                                    </div>
+                                </div>
+                                <a href="coastal-serenity-cottage.html" class="overlay-link"></a>
+                                <div class="wishlist">
+                                    <a href="javascript:void(0);" class="hover-tooltip tooltip-left box-icon">
+                                        <span class="icon icon-Heart"></span>
+                                        <span class="tooltip">Add to Wishlist</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <h4 class="price mb_12">$5280,00<span
+                                        class="text_secondary-color text-body-default">/month</span></h4>
+                                <a href="coastal-serenity-cottage.html" class="title mb_8 h5 link text_primary-color">Coastal
+                                    Serenity Cottage</a>
+                                <p>918 Maple Avenue, Brooklyn, NY 11215</p>
+                                <ul class="info d-flex">
+                                    <li class="d-flex align-items-center gap_8 text-title text_primary-color fw-6">
+                                        <i class="icon-Bed"></i>4 Beds
+                                    </li>
+                                    <li class="d-flex align-items-center gap_8 text-title text_primary-color fw-6">
+                                        <i class="icon-Bathstub"></i>2 Baths
+                                    </li>
+                                    <li class="d-flex align-items-center gap_8 text-title text_primary-color fw-6">
+                                        <i class="icon-Ruler"></i>2,600 Sqft
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1389,8 +558,7 @@
     </div>
     <!-- /wrapper -->
 
-    <!-- prograss
-            ============================================== -->
+    <!-- prograss ============================================== -->
     <div class="progress-wrap">
         <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
             <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
@@ -1399,7 +567,6 @@
         </svg>
     </div>
     <!-- End prograss -->
-
 
     <!-- mobile-nav -->
     <div class="offcanvas offcanvas-end mobile-nav-wrap " tabindex="-1" id="menu-mobile" aria-labelledby="menu-mobile">
@@ -1479,8 +646,6 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/splitting.min.js"></script>
-    <script src="js/map.min.js"></script>
-    <script src="js/map.js"></script>
     <script src="js/jquery.nice-select.min.js"></script>
     <script src="js/ScrollSmooth.js"></script>
     <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
