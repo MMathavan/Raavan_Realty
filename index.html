@@ -8,7 +8,7 @@
     <!-- Basic Page Needs -->
     <meta charset="utf-8">
     <!--[if IE ]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><![endif]-->
-    <title>Lands India Properties - Real Estate</title>
+    <title>Raavan Realty</title>
 
     <meta name="description"
         content="Luminor is a website specializing in buying and renting properties, connecting buyers and tenants with trusted property owners. With an easy-to-use interface and detailed information, Propty offers a fast and convenient property search experience.">
@@ -111,6 +111,20 @@
         .progress-wrap svg.progress-circle path {
             stroke: #ffffff !important;
         }
+
+        #wrapper .mapbox-3 {
+            width: 100vw;
+            max-width: 100vw;
+            margin-left: calc(50% - 50vw);
+            margin-right: calc(50% - 50vw);
+        }
+
+        #wrapper .mapbox-3 iframe {
+            width: 100% !important;
+            height: 450px;
+            display: block;
+            border: 0;
+        }
     </style>
 </head>
 
@@ -143,9 +157,9 @@
                                             <li><a href="coastal-serenity-cottage.html">Coastal Serenity Cottage</a></li>
                                         </ul>
                                     </li>
-                                    <li class="text-menu"><a href="amenities.html" class="toggle splitting">
-                                            <span class="text" data-splitting>Amenities</span>
-                                            <span class="text" data-splitting>Amenities</span>
+                                    <li class="text-menu"><a href="about-us.html" class="toggle splitting">
+                                            <span class="text" data-splitting>About Us</span>
+                                            <span class="text" data-splitting>About Us</span>
                                         </a></li>
                                     <li class="text-menu"><a href="gallery.html" class="toggle splitting">
                                             <span class="text" data-splitting>Gallery</span>
@@ -203,9 +217,9 @@
                                             <li><a href="coastal-serenity-cottage.html">Coastal Serenity Cottage</a></li>
                                         </ul>
                                     </li>
-                                    <li class="text-menu"><a href="amenities.html" class="toggle splitting">
-                                            <span class="text" data-splitting>Amenities</span>
-                                            <span class="text" data-splitting>Amenities</span>
+                                    <li class="text-menu"><a href="about-us.html" class="toggle splitting">
+                                            <span class="text" data-splitting>About Us</span>
+                                            <span class="text" data-splitting>About Us</span>
                                         </a></li>
                                     <li class="text-menu"><a href="gallery.html" class="toggle splitting">
                                             <span class="text" data-splitting>Gallery</span>
@@ -316,7 +330,8 @@
             <!-- section-about -->
             <div class="tf-container tf-spacing-1">
                 <div class="heading-section justify-content-center text-center mb_48">
-                    <span class="sub text-uppercase fw-6 text_secondary-color-2 split-text effect-rotate">ABout
+                    <span
+                        class="sub text-uppercase fw-6 text_secondary-color-2 split-text effect-rotate">ABout
                         Us</span>
                     <h3 class="split-text effect-blur-fade">Building Dreams, One Home At A Time</h3>
                 </div>
@@ -366,7 +381,10 @@
 
             <!-- map -->
             <div class="mapbox-3 ">
-                <div id="map"></div>
+                <iframe
+                    src="https://www.google.com/maps?q=Chennai%2C%20Tamil%20Nadu%2C%20India&z=13&output=embed"
+                    width="100%" height="450" style="border:0; display:block;" allowfullscreen=""
+                    loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <!-- End map -->
 
@@ -375,7 +393,7 @@
                 <div class="tf-container">
                     <div class="heading-section justify-content-center text-center mb_32">
                         <span
-                            class="sub text-uppercase fw-6 text_secondary-color-2 split-text split-text effect-rotate">Featured
+                            class="sub text-uppercase fw-6 text_secondary-color-2 split-text effect-rotate">Featured
                             Properties</span>
                         <h3 class="split-text effect-blur-fade">Find Your Dream Property</h3>
                     </div>
@@ -1052,7 +1070,7 @@
                         </div>
                     </li>
                     <li class="menu-item">
-                        <a href="amenities.html" class="item-menu-mobile">Amenities</a>
+                        <a href="about-us.html" class="item-menu-mobile">About Us</a>
                     </li>
                     <li class="menu-item">
                         <a href="gallery.html" class="item-menu-mobile">Gallery</a>
@@ -1096,8 +1114,6 @@
     <script src="js/carousel.js"></script>
     <script src="js/jquery.nice-select.min.js"></script>
     <script src="js/isotope.pkgd.min.js"></script>
-    <script src="js/map.min.js"></script>
-    <script src="js/map.js"></script>
     <script src="js/parallaxie.js"></script>
     <script src="js/ScrollSmooth.js"></script>
     <script src="js/ScrollTrigger.min.js"></script>
