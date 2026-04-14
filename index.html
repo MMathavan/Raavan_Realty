@@ -676,12 +676,14 @@
                             </div>
                         </div>
                         <div class="col-lg-6">
-                            <form class="form-call-back scrolling-effect effectRight">
+                            <form class="form-call-back scrolling-effect effectRight" method="post" action="form-handler.php">
+                                <input type="hidden" name="form_type" value="callback">
+                                <input type="hidden" name="help_topic" value="Investing in Real Estate">
                                 <div class="tf-grid-layout sm-col-2 gap_20 mb_20">
                                     <fieldset class="">
                                         <label for="fullName" class="text-button text_primary-color fw-7 mb_8">Full
                                             Name</label>
-                                        <input class="" id="fullName" type="text" placeholder="Full Name" name="text"
+                                        <input class="" id="fullName" type="text" placeholder="Full Name" name="full_name"
                                             tabindex="2" value="" aria-required="true" required="">
                                     </fieldset>
                                     <fieldset class="">
@@ -696,7 +698,7 @@
                                         <label for="phone" class="text-button text_primary-color fw-7 mb_8">Phone
                                             Number</label>
                                         <input class="" id="phone" type="number" placeholder="Enter your phone number"
-                                            name="text" tabindex="2" value="" aria-required="true" required="">
+                                            name="phone" tabindex="2" value="" aria-required="true" required="">
                                     </fieldset>
                                     <div>
                                         <div class="text-button text_primary-color mb_8">How Can We Help You?</div>

@@ -99,6 +99,27 @@
             height: 450px;
             display: block;
         }
+
+        #wrapper .form-contact select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            background-color: #fff;
+            color: inherit;
+            line-height: 1.4;
+            min-height: 48px;
+            outline: none;
+        }
+
+        #wrapper .form-contact select:focus {
+            border-color: #7c0a02;
+            box-shadow: 0 0 0 0.2rem rgba(124, 10, 2, 0.15);
+        }
+
+        #wrapper .form-contact select option[disabled] {
+            color: #9ca3af;
+        }
     </style>
 </head>
 
@@ -306,27 +327,30 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <form class="form-contact">
+                        <form class="form-contact" method="post" action="form-handler.php">
+                            <input type="hidden" name="form_type" value="contact">
                             <div class="heading mb_24">
                                 <h4 class="mb_8">Get In Touch</h4>
                                 <p>We'd love to hear from you! If you have any questions</p>
                             </div>
+
                             <div class="wrap mb_24">
                                 <div class="tf-grid-layout md-col-2 mb_20">
                                     <fieldset class="">
                                         <label for="fisrtName" class="text-button text_primary-color fw-7 mb_8">First
                                             Name</label>
-                                        <input class="" id="fisrtName" type="text" placeholder="First Name" name="text"
+                                        <input class="" id="fisrtName" type="text" placeholder="First Name" name="first_name"
                                             tabindex="2" value="" aria-required="true" required="">
                                     </fieldset>
                                     <fieldset class="">
                                         <label for="lastName" class="text-button text_primary-color fw-7 mb_8">Last
                                             Name</label>
-                                        <input class="" id="lastName" type="text" placeholder="Last Name" name="text"
+                                        <input class="" id="lastName" type="text" placeholder="Last Name" name="last_name"
                                             tabindex="2" value="" aria-required="true" required="">
                                     </fieldset>
                                 </div>
                                 <div class="tf-grid-layout md-col-2 mb_20">
+
                                     <fieldset class="">
                                         <label for="email"
                                             class="text-button text_primary-color fw-7 mb_8">Email</label>
@@ -337,18 +361,28 @@
                                         <label for="phone" class="text-button text_primary-color fw-7 mb_8">Phone
                                             Number</label>
                                         <input class="" id="phone" type="number" placeholder="Enter your phone number"
-                                            name="text" tabindex="2" value="" aria-required="true" required="">
+                                            name="phone" tabindex="2" value="" aria-required="true" required="">
                                     </fieldset>
                                 </div>
+                                <fieldset>
+                                    <label for="plot" class="text-button text_primary-color fw-7 mb_8">Plots That I Want</label>
+                                    <select id="plot" class="" name="plot" tabindex="2" aria-required="true" required="">
+                                        <option value="" selected disabled>Select an option</option>
+                                        <option value="Subbammal Nagar, Perungattur">Subbammal Nagar, Perungattur</option>
+                                        <option value="Sunset Heights Estate">Sunset Heights Estate</option>
+                                        <option value="Coastal Serenity Cottage">Coastal Serenity Cottage</option>
+                                    </select>
+                                </fieldset>
                                 <fieldset>
                                     <label for="comment"
                                         class="text-button text_primary-color fw-7 mb_8">Message</label>
                                     <textarea id="comment" class="" rows="4" placeholder="Your Message" tabindex="2"
-                                        aria-required="true" required=""></textarea>
+                                        name="message" aria-required="true" required=""></textarea>
                                 </fieldset>
                             </div>
                             <button class="tf-btn btn-bg-1 btn-px-28 w-full" type="submit">
                                 <span>Send Message</span>
+
                                 <span class="bg-effect"></span>
                             </button>
                         </form>
