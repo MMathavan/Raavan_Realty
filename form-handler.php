@@ -15,7 +15,7 @@ function get_post(string $key): string
 
 $formType = get_post('form_type');
 
-$to = 'themesflat@gmail.com';
+$to = 'sales@landsindiaproperties.com';
 $subjectPrefix = 'Raavan Realty Website';
 
 $fullName = get_post('full_name');
