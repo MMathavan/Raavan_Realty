@@ -29,9 +29,8 @@ $plot = get_post('plot');
 
 if ($formType === 'contact') {
     $allowedPlots = [
-        'Subbammal Nagar, Perungattur',
-        'Sunset Heights Estate',
-        'Coastal Serenity Cottage',
+        'taasa medora, urapakkam',
+        'kg garden, thirumazhisai',
     ];
 
     if ($firstName === '' || $lastName === '' || $email === '' || $phone === '' || $message === '' || $plot === '') {
@@ -95,8 +94,12 @@ $headers[] = 'Reply-To: ' . $fromName . ' <' . $email . '>';
 
 $sent = @mail($to, $subject, $body, implode("\r\n", $headers));
 
-$redirectTo = $_SERVER['HTTP_REFERER'] ?? 'index.html';
-$redirectTo .= (strpos($redirectTo, '?') === false ? '?' : '&') . ($sent ? 'sent=1' : 'sent=0');
-
-header('Location: ' . $redirectTo);
+if ($formType === 'contact' && $sent) {
+    $plotParam = urlencode($plot);
+    header('Location: thank-you.html?plot=' . $plotParam);
+} else {
+    $redirectTo = $_SERVER['HTTP_REFERER'] ?? 'index.html';
+    $redirectTo .= (strpos($redirectTo, '?') === false ? '?' : '&') . ($sent ? 'sent=1' : 'sent=0');
+    header('Location: ' . $redirectTo);
+}
 exit;
